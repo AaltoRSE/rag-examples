@@ -4,19 +4,28 @@ channels:
 dependencies:
   - python==3.12
   - pip
+  - pytorch=*=cpu_*
+  - torchvision
+  - pandas
+  - langdetect
+  - antlr4-python3-runtime=4.9.3
   - pip:
     - langchain
     # Other loaders
     - langchain_community
-    # Unstructured
-    - unstructured[pdf]
-    # PyPDF
-    - pypdf
-    # PyMuPDF
-    - pymupdf
+    # Docling
+    - langchain-docling
     # PDFMiner
     - pdfminer.six
     # PDFPlumber
     - pdfplumber
+    # PyMuPDF
+    - pymupdf
+    # PyMuPDF4LLM
+    - langchain-pymupdf4llm
+    # PyPDF
+    - pypdf
     # PyPDFium
     - pypdfium2
+    # Unstructured
+    - unstructured[pdf]

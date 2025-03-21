@@ -27,6 +27,17 @@ EXAMPLE_PDF_SEARCHES = [
 ]
 
 
+def load_docling(pdf):
+
+    from langchain_docling import DoclingLoader
+
+    loader = DoclingLoader(pdf)
+
+    docs = loader.load()
+
+    return docs
+
+
 def load_pdfminer(pdf):
 
     from langchain_community.document_loaders import PDFMinerLoader
@@ -54,6 +65,17 @@ def load_pymupdf(pdf):
     from langchain_community.document_loaders import PyMuPDFLoader
 
     loader = PyMuPDFLoader(pdf)
+
+    docs = loader.load()
+
+    return docs
+
+
+def load_pymupdf4llm(pdf):
+
+    from langchain_pymupdf4llm import PyMuPDF4LLMLoader
+
+    loader = PyMuPDF4LLMLoader(pdf)
 
     docs = loader.load()
 
