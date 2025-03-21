@@ -1,0 +1,22 @@
+name: langchain-pdf-ingestion
+channels:
+  - conda-forge
+dependencies:
+  - python==3.12
+  - pip
+  - pip:
+    - langchain
+    # Other loaders
+    - langchain_community
+    # Unstructured
+    - unstructured[pdf]
+    # PyPDF
+    - pypdf
+    # PyMuPDF
+    - pymupdf
+    # PDFMiner
+    - pdfminer.six
+    # PDFPlumber
+    - pdfplumber
+    # PyPDFium
+    - pypdfium2
