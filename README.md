@@ -24,4 +24,4 @@ them, please check out [our contribution guide](./CONTRIBUTING.md).
 
 ## License
 
-See [LICENCE](./LICENCE) for licensing information.
+See [LICENSE](./LICENSE) for licensing information.
