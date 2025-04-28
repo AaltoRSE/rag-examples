@@ -1,3 +1,9 @@
+"""
+This code sets up the FastAPI server with LangServe LLM endpoints and
+OpenAPI docs.
+
+"""
+
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from langserve import add_routes

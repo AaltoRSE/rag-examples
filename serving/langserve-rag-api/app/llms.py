@@ -2,10 +2,18 @@ from app.utils import read_secrets
 from langchain_openai import ChatOpenAI
 
 
-def get_llm(secrets_file=None, streaming=False):
+def get_llm(
+    secrets_file: str = "./secrets/api_keys.env", streaming: bool = False
+) -> ChatOpenAI:
+    """This function creates a LangChain LLM chat that will be called by the LLM chains.
 
-    if not secrets_file:
-        secrets_file = "./secrets/api_keys.env"
+    Args:
+        secrets_file (str): Path to the secrets file that contains the secrets needed to
+            contact an OpenAI compatible endpoint. Default is ./secrets/api_keys.env.
+        streaming (bool): Whether output from the LLM should be streamed or not.
+    Returns:
+        ChatOpenAI: LLM endpoint.
+    """
 
     secrets = read_secrets(secrets_file)
 

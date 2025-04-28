@@ -1,3 +1,11 @@
+"""
+This file contains prompt structures for various different prompting
+strategies.
+
+All are created from ChatPromptTemplate. When these prompts are used in
+LLM chains the chain will fill out the string format using relevant information.
+"""
+
 from langchain_core.prompts import ChatPromptTemplate
 
 
