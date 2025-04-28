@@ -1,5 +1,11 @@
 # langserve-rag-api
 
+This example shows a custom LLM REST API created with
+[LangServe](https://python.langchain.com/docs/langserve/).
+
+The REST API shows features such as JSON formatted outputs
+and retrieval assisted generation.
+
 ## Local installation
 
 ### Install micromamba

@@ -4,7 +4,7 @@ This repository contains examples for RAG (retrieval assisted generation) setups
 
 ## Available examples
 
-### Data Ingesion
+### Data Ingestion
 
 - langchain-pdf-ingestion - An example script that demonstrates and tests different
   PDF loaders provided by LangChain. See
