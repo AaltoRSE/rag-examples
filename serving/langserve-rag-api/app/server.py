@@ -11,30 +11,15 @@ app = FastAPI()
 async def redirect_root_to_docs():
     return RedirectResponse("/docs")
 
-add_routes(
-    app,
-    llm_chain,
-    path='/llm'
-)
 
-add_routes(
-    app,
-    json_chain,
-    path='/json'
-)
+add_routes(app, llm_chain, path="/llm")
 
-add_routes(
-    app,
-    json_limerick_chain,
-    path='/limerick'
-)
+add_routes(app, json_chain, path="/json")
+
+add_routes(app, json_limerick_chain, path="/limerick")
 
 
-add_routes(
-    app,
-    salesman_chain,
-    path='/salesman'
-)
+add_routes(app, salesman_chain, path="/salesman")
 
 
 if __name__ == "__main__":

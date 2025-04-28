@@ -10,16 +10,18 @@ def get_llm(secrets_file=None, streaming=False):
     secrets = read_secrets(secrets_file)
 
     assert len(secrets["OPENAI_API_KEY"]) > 0, "OpenAI API key is missing from secrets"
-    assert len(secrets["OPENAI_BASE_URL"]) > 0, "OpenAI Base URL is missing from secrets"
+    assert (
+        len(secrets["OPENAI_BASE_URL"]) > 0
+    ), "OpenAI Base URL is missing from secrets"
     assert len(secrets["OPENAI_MODEL"]) > 0, "OpenAI Model is missing from secrets"
 
-    if len(secrets.get('AZURE_AUTH', '')) > 0:
+    if len(secrets.get("AZURE_AUTH", "")) > 0:
 
         llm = ChatOpenAI(
             temperature=0.1,
             base_url=secrets["OPENAI_BASE_URL"],
-            api_key=secrets["OPENAI_API_KEY"], #pyright: ignore
-            default_headers = {
+            api_key=secrets["OPENAI_API_KEY"],  # pyright: ignore
+            default_headers={
                 "Ocp-Apim-Subscription-Key": secrets["OPENAI_API_KEY"],
             },
         )

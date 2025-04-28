@@ -22,10 +22,7 @@ retriever = CityRetriever()
 llm = get_llm(streaming=True)
 json_llm = get_llm(streaming=False)
 
-llm_chain = (
-    llm
-    | StrOutputParser()
-)
+llm_chain = llm | StrOutputParser()
 
 json_chain = (
     json_prompt.partial(**{"answer_format": json_parser.get_format_instructions()})
@@ -34,7 +31,9 @@ json_chain = (
 )
 
 json_limerick_chain = (
-    json_limerick_prompt.partial(**{"answer_format": json_parser.get_format_instructions()})
+    json_limerick_prompt.partial(
+        **{"answer_format": json_parser.get_format_instructions()}
+    )
     | json_llm
     | json_parser
 )
@@ -47,4 +46,4 @@ salesman_chain = (
 )
 
 # Uncomment if you wnat to test llm during server reload
-#rag_chain.invoke("Where should I travel?")
+# rag_chain.invoke("Where should I travel?")
