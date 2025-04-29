@@ -1,6 +1,5 @@
 # langchain-pdf-loaders
 
-
 ## Intro
 
 LangChain is a commonly used toolbox for constructing RAG applications.
@@ -26,12 +25,12 @@ When given a PDF filename, a loader will create a list of
 These represent any kind of document and its corresponding metadata.
 Some PDF loaders might provide more documents that others.
 
-
 ## Testing different loaders with langchain-pdf-loaders.py
 
-Different PDF loaders can provide varying results based on the type of PDF you're
-loading. To help out on the process of choosing a document loader we have created a script
-that you can use to test out different document loaders.
+Different PDF loaders can provide varying results based on the type of PDF
+you're loading. To help out on the process of choosing a document loader
+we have created a script that you can use to test out different document
+loaders.
 
 This script is called `langchain-pdf-loaders.py`. Here is it's help page:
 
@@ -60,21 +59,22 @@ options:
 All of the document loading is handled by simple functions in the script,
 so copying the relevant parts to your own code should a simple task.
 
-
 ### Installation
 
 You can install an environment with all of the tested loaders by using the
 included environment.yml.
 
 Install the environment with:
+
 ```sh
 mamba env create -f environment.yml
 ```
+
 or
+
 ```sh
 conda env create -f environment.yml
 ```
-
 
 ### Checking the examples
 
@@ -87,19 +87,19 @@ python langchain-pdf-loaders.py
 ```
 
 To run the second example, run
+
 ```sh
 python langchain-pdf-loaders.py --example 2
 ```
-
 
 ### Running with your own PDF
 
 You can provide the tool with your own PDF files. If the PDF name is an URL,
 PDF will be downloaded first
+
 ```sh
 python langchain-pdf-loaders.py my_pdf.pdf
 ```
-
 
 ### Searching a phrase from a PDF
 
@@ -111,7 +111,6 @@ the document has been loaded correctly. You can do this by using the
 python langchain-pdf-loaders.py my_pdf.pdf --search "my phrase"
 ```
 
-
 ### Printing document contents that match the search
 
 You can print the document pages that match the search phrase by setting
@@ -121,7 +120,6 @@ the `--print-search`-option.
 python langchain-pdf-loaders.py my_pdf.pdf --search "my phrase" --print-search
 ```
 
-
 ### Printing all pages
 
 You can print out all pages by using the `--print-page-contents`-option.
@@ -129,7 +127,6 @@ You can print out all pages by using the `--print-page-contents`-option.
 ```sh
 python langchain-pdf-loaders.py my_pdf.pdf --print-page-contents
 ```
-
 
 ### Choosing loaders
 
@@ -139,7 +136,6 @@ You can limit the loaders you want to use by choosing them via
 ```sh
 python langchain-pdf-loaders.py my_pdf.pdf --loaders pymupdf,unstructured
 ```
-
 
 ### Printing JSON output
 

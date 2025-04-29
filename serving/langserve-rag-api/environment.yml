@@ -12,3 +12,4 @@ dependencies:
     - langchain-cli
     - langserve[all]
     - langchain-openai
+    - pydantic<2.11

@@ -1,3 +1,9 @@
+"""
+This code sets up the FastAPI server with LangServe LLM endpoints and
+OpenAPI docs.
+
+"""
+
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from langserve import add_routes
@@ -11,30 +17,15 @@ app = FastAPI()
 async def redirect_root_to_docs():
     return RedirectResponse("/docs")
 
-add_routes(
-    app,
-    llm_chain,
-    path='/llm'
-)
 
-add_routes(
-    app,
-    json_chain,
-    path='/json'
-)
+add_routes(app, llm_chain, path="/llm")
 
-add_routes(
-    app,
-    json_limerick_chain,
-    path='/limerick'
-)
+add_routes(app, json_chain, path="/json")
+
+add_routes(app, json_limerick_chain, path="/limerick")
 
 
-add_routes(
-    app,
-    salesman_chain,
-    path='/salesman'
-)
+add_routes(app, salesman_chain, path="/salesman")
 
 
 if __name__ == "__main__":
